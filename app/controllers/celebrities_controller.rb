@@ -1,6 +1,14 @@
 class CelebritiesController < ApplicationController
+  def show
+    @celebrity = Celebrity.find(params[:id])
+  end
+
+  def index
+    @celebrities = Celebrity.all
+  end
+
   def new
-    @celibrity = Celebrity.new
+    @celebrity = Celebrity.new
   end
 
   def create
@@ -19,14 +27,6 @@ class CelebritiesController < ApplicationController
 
   def edit
     @celebrity = Celebrity.find(params[:id])
-  end
-
-  def show
-    @celebrity = Celebrity.find(params[:id])
-  end
-
-  def index
-    @celebrities = Celebrity.all
   end
 
   def celebrities_params
