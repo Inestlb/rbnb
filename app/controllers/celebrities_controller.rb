@@ -26,7 +26,7 @@ class CelebritiesController < ApplicationController
   end
 
   def index
-    @celebrity = Celebrity.all
+    @celebrities = Celebrity.all
   end
 
   def celebrities_params
