@@ -1,6 +1,6 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
   def index
-    @booking = Booking.all
+    @bookings = Booking.all
   end
 
   def new
@@ -11,7 +11,7 @@ class BookingController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.list = @list
     if @booking.save
-      redirect_to celebrity_path(@celebrity)
+    redirect_to celebrity_path(@celebrity)
     end
   end
 end
