@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @bookings = Booking.all
   end
@@ -7,19 +9,27 @@ class BookingsController < ApplicationController
     @celebrity = Celebrity.find(params[:celebrity_id])
     @celebrities = Celebrity.all
     @booking = Booking.new
+
   end
 
   def create
+    @celebrity = Celebrity.find(params[:celebrity_id])
     @booking = Booking.new(booking_params)
-    @booking.list = @list
+    @booking.celebrity = @celebrity
+    @booking.user = current_user # Associe l'utilisateur connecté à la réservation
     if @booking.save
-    redirect_to celebrity_path(@celebrity)
+      redirect_to celebrity_path(@celebrity), notice: "Réservation réussie !"
+    else
+      flash.now[:alert] = "Erreur lors de la réservation. Veuillez réessayer."
+      render :new
     end
   end
 
   private
 
+
+
   def booking_params
-    params.require(:booking).permit(:user_id, :celebrity_id, :activity, :total_price)
+    params.require(:booking).permit(:activity, :total_price)
   end
 end
