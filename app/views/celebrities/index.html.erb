@@ -97,8 +97,8 @@
             </ul>
 
             <div class="card-body">
-              <a href="#" class="card-link">Voir plus</a>
-              <a href="#" class="card-link">Réserver</a>
+              <%= link_to "Voir plus", celebrity_path(celebrity) %>
+              <%= link_to "Réserver", new_celebrity_booking_path(celebrity) %>
             </div>
 
           </div>
