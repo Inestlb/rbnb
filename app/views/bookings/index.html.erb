@@ -1,0 +1,16 @@
+<h2 class="text-center my-5">Mes Réservations</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @bookings.each do |booking| %>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="card-img-top" alt="Image de réservation">
+        <div class="card-body">
+          <h5 class="card-title">Prix total : <%= number_to_currency(booking.total_price, unit: "€") %></h5>
+          <p class="card-text"><strong>Activité :</strong> <%= booking.activity %></p>
+          <p class="card-text"><strong>Utilisateur :</strong> <%= booking.user_id %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

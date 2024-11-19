@@ -6,12 +6,6 @@
           <div class="card-body">
             <h2 class="card-title text-center mb-4">Réservation</h2>
 
-            <!-- Select a celebrity -->
-            <div class="mb-3">
-              <%= f.label :celebrity_id, "Select a celebrity", class: "form-label" %>
-              <%= f.collection_select :celebrity_id, @celebrities, :id, :name, { prompt: "Select a celebrity" }, { class: "form-control" } %>
-            </div>
-
             <!-- Select an activity -->
             <div class="mb-3">
               <%= f.label :activity, "Select an activity", class: "form-label" %>
