@@ -1,0 +1,13 @@
+.avatar {
+  width: 50px; /* Taille ajustable selon vos besoins */
+  height: 50px; /* Taille ajustable selon vos besoins */
+  border-radius: 50%; /* Rend l'image circulaire */
+  object-fit: cover; /* Pour ajuster le contenu dans le cercle */
+  border: 2px solid #C68fe6; /* Optionnel, ajoute une bordure */
+}
+
+.dropdown-item:hover {
+  background-color: #C68fe6; /* Couleur de fond lors du hover */
+  color: #fff; /* Couleur du texte lors du hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour un effet fluide */
+}
