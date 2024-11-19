@@ -1,33 +1,49 @@
 <%= simple_form_for([@celebrity, @booking]) do |f| %>
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-8">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title text-center mb-4">Réservation <strong><%= @celebrity.name %></strong></h2>
+  <div class="container my-5 d-flex justify-content-center">
+    <div class="card shadow-sm" style="border-radius: 15px; max-width: 800px; width: 100%;">
+      <div class="card-body p-5">
+        <h2 class="card-title text-center mb-4">Réservation <strong><%= @celebrity.name %></strong></h2>
 
-            <!-- Select an activity -->
-            <div class="mb-3">
-              <%= f.label :activity, "Select an activity", class: "form-label" %>
-              <%= f.collection_select :activity, [["Activity 1", "Course à cheval au coucher de soleil"], ["Activity 2", "Apparition dans un anniversaire"], ["Activity 3", "Mcdo ensemble"], ["Activity 4", "Rendre visite à ma mamie"], ["Activity 5", "M'apprendre AJAX dans rails"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
-            </div>
+        <!-- Select an activity -->
+        <div class="mb-3">
+          <%= f.label :activity, "Select an activity", class: "form-label" %>
+          <%= f.collection_select :activity, [["Activity 1", "Course à cheval au coucher de soleil"], ["Activity 2", "Apparition dans un anniversaire"], ["Activity 3", "Mcdo ensemble"], ["Activity 4", "Rendre visite à ma mamie"], ["Activity 5", "M'apprendre AJAX dans rails"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
+        </div>
 
-           <div class="mb-3">
-            <%= f.label :price_per_hour, "Price per hour", class: "form-label" %>
-            <p class="form-control-plaintext"><%= @celebrity.price_per_hour %> €</p>
-            </div>
-
-            <div class="mb-3">
-            <%= f.label :total_price, "Total price", class: "form-label" %>
-            <p class="form-control-plaintext"><%= @booking.total_price %> €</p>
-            </div>
-
-
-            <!-- Submit button -->
-            <div class="d-flex justify-content-center mt-4">
-              <%= f.submit "Réserver", class: "btn btn-primary" %>
-            </div>
+        <!-- Price per hour -->
+        <div class="row mb-3 align-items-center">
+          <div class="col-6 text-end">
+            <%= f.label :price_per_hour, "Price per hour", class: "form-label mb-0" %>
           </div>
+          <div class="col-6 text-start">
+            <p class="form-control-plaintext mb-0"><%= @celebrity.price_per_hour %> €</p>
+          </div>
+        </div>
+
+        <!-- Date start -->
+        <div class="mb-3">
+          <%= f.input :date_start, as: :string, label: "Start Date", input_html: { class: "form-control", data: { controller: "datepicker" } } %>
+        </div>
+
+        <!-- Date end -->
+        <div class="mb-3">
+          <%= f.input :date_end, as: :string, label: "End Date", input_html: { class: "form-control", data: { controller: "datepicker" } } %>
+        </div>
+
+        <!-- Total price -->
+        <div class="row mb-3 align-items-center">
+          <div class="col-6 text-end">
+            <%= f.label :total_price, "Total price", class: "form-label mb-0" %>
+          </div>
+          <div class="col-6 text-start">
+            <p class="form-control-plaintext mb-0"><%= @booking.total_price || "—" %> €</p>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="d-flex justify-content-center mt-4">
+          <%= f.submit "Réserver", class: "btn btn-primary me-2" %>
+          <%= link_to "Retour", celebrities_path, class: "btn btn-secondary" %>
         </div>
       </div>
     </div>
