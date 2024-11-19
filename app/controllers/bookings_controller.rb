@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @celebrity = Celebrity.find(params[:celebrity_id])
     @celebrities = Celebrity.all
     @booking = Booking.new
+    @booking.total_price = @celebrity.price_per_hour # fois l'heure de fin - l'heure de début
 
   end
 

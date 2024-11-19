@@ -4,12 +4,22 @@
       <div class="col-8">
         <div class="card">
           <div class="card-body">
-            <h2 class="card-title text-center mb-4">Réservation</h2>
+            <h2 class="card-title text-center mb-4">Réservation <strong><%= @celebrity.name %></strong></h2>
 
             <!-- Select an activity -->
             <div class="mb-3">
               <%= f.label :activity, "Select an activity", class: "form-label" %>
-              <%= f.collection_select :activity, [["Activity 1", "Activity 1"], ["Activity 2", "Activity 2"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
+              <%= f.collection_select :activity, [["Activity 1", "Course à cheval au coucher de soleil"], ["Activity 2", "Apparition dans un anniversaire"], ["Activity 3", "Mcdo ensemble"], ["Activity 4", "Rendre visite à ma mamie"], ["Activity 5", "M'apprendre AJAX dans rails"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
+            </div>
+
+           <div class="mb-3">
+            <%= f.label :price_per_hour, "Price per hour", class: "form-label" %>
+            <p class="form-control-plaintext"><%= @celebrity.price_per_hour %> €</p>
+            </div>
+
+            <div class="mb-3">
+            <%= f.label :total_price, "Total price", class: "form-label" %>
+            <p class="form-control-plaintext"><%= @booking.total_price %> €</p>
             </div>
 
 
