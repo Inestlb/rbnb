@@ -1,38 +1,112 @@
-<div class="container text-center">
+<div class= "website-background">
+
+  <div class="container text-center">
+
     <div class="text-center">
-      <form class="d-flex mt-4 w-50 mx-auto" action="/" accept-charset="UTF-8" method="get">
+
+      <form class="d-flex pt-4 w-50 mx-auto" action="/" accept-charset="UTF-8" method="get">
         <input class="form-control me-2" type="text" name="search[query]" id="search_query" placeholder="Describe your dream activity with your favorite star...">
         <button class="btn btn-primary" type="submit">
           <i class="fas fa-search"></i> Search
         </button>
       </form>
+
     </div>
+
   </div>
-
-
-<h2 class="fw-bold m-4"> Find your celebrity match </h2>
-
-<div id="allcards" class="container">
-  <div class="row justify-content-center gy-4">
-    <%= @celebrities.each do |celebrity|%>
-      <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= celebrity.name %></h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= celebrity.price_per_hour %></li>
-          <li class="list-group-item"><%= celebrity.location %></li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Voir plus</a>
-          <a href="#" class="card-link">Réserver</a>
-        </div>
-      </div>
+<div class="container icon-categories">
+  <div class="row text-center g-3">
+  <div class="col-auto">
+  <ul class="list icons d-flex justify-content-center">
+    <li>
+      <img
+        src="https://em-content.zobj.net/source/apple/391/selfie_medium-skin-tone_1f933-1f3fd_1f3fd.png"
+        alt="Influence emoji"
+        class="mx-8"
+        style="width: 34px; height: 34px;">
+    </li>
+     </div>
+    <div class="col-auto">
+    <li>
+      <img
+        src="https://em-content.zobj.net/source/apple/391/man-lifting-weights-medium-light-skin-tone_1f3cb-1f3fc-200d-2642-fe0f.png"
+        alt="Sport emoji"
+        class="mx-9"
+        style="width: 34px; height: 34px;">
+    </li>
     </div>
-    <% end %>
-  </div>
+    <div class="col-auto">
+    <li>
+      <img
+        src="https://em-content.zobj.net/source/apple/391/clapper-board_1f3ac.png"
+        alt="Actor emoji"
+        class="mx-9"
+        style="width: 34px; height: 34px;">
+    </li>
+    </div>
+    <div class="col-auto">
+    <li>
+      <img
+        src="https://em-content.zobj.net/source/apple/391/microphone_1f3a4.png"
+        alt="Chanteur emoji"
+        class="mx-9"
+        style="width: 34px; height: 34px;">
+    </li>
+    </div>
+    <div class="col-auto">
+     <li>
+      <img
+        src="https://em-content.zobj.net/source/apple/391/classical-building_1f3db-fe0f.png"
+        alt="Politique emoji"
+        class="mx-9"
+        style="width: 34px; height: 34px;">
+    </li>
+    </div>
+    <div class="col-auto">
+     <li>
+      <img
+        src="https://em-content.zobj.net/source/apple/391/performing-arts_1f3ad.png"
+        alt="Humour emoji"
+        class="mx-9"
+        style="width: 34px; height: 34px;">
+    </li>
+    </div>
+  </ul>
 </div>
+</div>
+
+
+  <div id="allcards" class="container mt-4">
+
+    <div class="row justify-content-center gy-4">
+
+      <% @celebrities.each do |celebrity|%>
+
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+               <h5 class="card-title"><%= celebrity.name %></h5>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= celebrity.price_per_hour %></li>
+              <li class="list-group-item"><%= celebrity.location %></li>
+            </ul>
+
+            <div class="card-body">
+              <a href="#" class="card-link">Voir plus</a>
+              <a href="#" class="card-link">Réserver</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
   </div>
 </div>
