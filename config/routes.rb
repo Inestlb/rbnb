@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   root to: "celebrities#index"
   resources :users, only: [:new, :create, :show]
-  resources :celebrities, except: [:destroy]
-  resources :bookings, only: [:index, :new, :create]
+  resources :celebrities, except: [:destroy] do
+    resources :bookings, only: [:index, :new, :create]
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
