@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+.icons {
+  display: flex;       /* Active le mode Flexbox */
+  gap: 15px;           /* Espacement entre les icônes */
+  list-style: none;    /* Supprime les puces des <li> */
+  padding: 0;          /* Supprime le padding interne de la liste */
+  margin: 0;           /* Supprime les marges externes de la liste */
+}
+
+.website-background {
+  background-color: #f5f1f1;
+  width: 100%;
+  height: 100vh;
+}
