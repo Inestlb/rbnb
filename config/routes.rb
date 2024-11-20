@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   root to: "celebrities#index"
   resources :users, only: [:new, :create, :show]
   resources :celebrities, except: [:destroy] do
-    resources :bookings, only: [:index, :new, :create]
+    resources :bookings, only: [:index, :new, :create, :update]
+    patch "bookings/:id/accept", to: "bookings#accept", as: :accept
+    patch "bookings/:id/refuse", to: "bookings#refuse", as: :refuse
   end
+
+
 
   # Defines the root path route ("/")
   # root "posts#index"

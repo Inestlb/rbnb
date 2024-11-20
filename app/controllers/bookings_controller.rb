@@ -28,12 +28,32 @@ class BookingsController < ApplicationController
     end
   end
 
+
+  def accept
+    @celebrity = Celebrity.find(params[:celebrity_id])
+    @booking = Booking.find(params[:id])
+    @booking.accepted!
+  end
+
+  def refuse
+    @booking.refused!
+  end
+
+  def update
+    if params[:status].present? && Booking::STATUSES.include?(params[:status])
+      @booking.update(status: params[:status])
+      redirect_to bookings_path, notice: "Statut mis à jour avec succès."
+    else
+      redirect_to bookings_path, alert: "Statut invalide."
+    end
+  end
+
+
+
   private
 
-
-
   def booking_params
-    params.require(:booking).permit(:activity, :total_price, :date_start, :date_end)
+    params.require(:booking).permit(:activity, :total_price, :date_start, :date_end, :status)
   end
 
   def price_vs_time
@@ -44,4 +64,5 @@ class BookingsController < ApplicationController
       @booking.total_price = @celebrity.price_per_hour
     end
   end
+
 end
