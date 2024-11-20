@@ -2,8 +2,9 @@
   <div class="card shadow-sm" style="border-radius: 15px; max-width: 900px; width: 100%;">
     <div class="card-body p-5">
       <h2 class="card-title text-center mb-4"><%= @celebrity.name %></h2>
+      <img src="<%=@celebrity.images%>" alt="<%= @celebrity.name %> profile image">
       <p class="card-text"><strong>Rating:</strong> <%= @celebrity.rating %> / 5</p>
-      <p class="card-text"><strong>Un mot de ta star:</strong> <%= @celebrity.word %></p>
+      <p class="card-text"><strong>Un mot de ta star:</strong> <%= @celebrity.word%></p>
       <p class="card-text"><strong>Prix à l'heure:</strong> <%= @celebrity.price_per_hour %> €</p>
       <p class="card-text"><strong>Localisation:</strong> <%= @celebrity.location %></p>
       <div class="d-flex justify-content-center mt-4">
