@@ -12,3 +12,11 @@
 @import "pages/index";
 @import "pages/navbar";
 @import "pages/index_booking";
+
+body {
+  background-color: #f8e8ff; /* Une couleur de fond douce */
+  background-image: image-url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
