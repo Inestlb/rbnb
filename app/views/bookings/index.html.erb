@@ -7,8 +7,11 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="card-img-top" alt="Image de réservation">
         <div class="card-body">
           <h5 class="card-title">Prix total : <%= number_to_currency(booking.total_price, unit: "€") %></h5>
-          <p class="card-text"><strong>Activité :</strong> <%= booking.activity %></p>
-          <p class="card-text"><strong>Utilisateur :</strong> <%= booking.user_id %></p>
+          <p class="card-text"><strong>Activité:</strong> <%= booking.activity %></p>
+          <p class="card-text"><strong>Utilisateur:</strong> <%= booking.user_id %></p>
+          <p class="card-text"><strong>Réservations:</strong> <%= booking.status %></p>
+          <%= link_to "Accepter", celebrity_accept_path(id: booking.id), data: { turbo_method: "PATCH" } %>
+          <%= link_to "Annuler", celebrity_refuse_path(id: booking.id), method: :patch %>
         </div>
       </div>
     </div>
