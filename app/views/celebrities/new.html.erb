@@ -1,0 +1,47 @@
+<%= simple_form_for @celebrity do |f| %>
+  <div class="container my-5 d-flex justify-content-center">
+    <div class="card shadow-sm" style="border-radius: 15px; max-width: 800px; width: 100%;">
+      <div class="card-body p-5">
+        <h2 class="card-title text-center mb-4">Réservation <strong><%= @celebrity.name %></strong></h2>
+
+        <!-- Select an activity -->
+        <%# <div class="mb-3">
+          <%= f.label :activity, "Select an activity", class: "form-label" %>
+          <%# <%= f.collection_select :activity, [["Activity 1", "Course à cheval au coucher de soleil"], ["Activity 2", "Apparition dans un anniversaire"], ["Activity 3", "Mcdo ensemble"], ["Activity 4", "Rendre visite à ma mamie"], ["Activity 5", "M'apprendre AJAX dans rails"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
+        <%# </div> %>
+
+        <div class="mb-3">
+         <%= f.input :name, as: :string, label: "Enter your name" %>
+        </div>
+        <!-- Price per hour -->
+        <div class="row mb-3>
+          <div class="col-6 text-end">
+            <%= f.input :price_per_hour, input_html: { type: 'number' } %>
+          </div>
+
+        <div class="mb-3">
+         <%= f.input :location, as: :string, label: "Location" %>
+        </div>
+
+          <!-- Date end -->
+          <%# <div class="col-6 text-start">
+            <p class="form-control-plaintext mb-0"><%= @celebrity.price_per_hour €</p> %>
+          <%# </div>
+        </div> %>
+
+        <!-- Date start -->
+
+        <!-- Date end -->
+        <%# <div class="mb-3">
+          <%= f.input :date_end, as: :string, label: "End Date", input_html: { class: "form-control", data: { controller: "datepicker" } } %>
+        <%# </div> %>
+
+        <!-- Submit button -->
+        <div class="d-flex justify-content-center mt-4">
+          <%= f.submit "Créer une célébrité vraiment svp", class: "btn btn-primary me-2" %>
+          <%= link_to "Retour", celebrities_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -13,9 +13,10 @@ class CelebritiesController < ApplicationController
 
   def create
     @celebrity = Celebrity.new(celebrity_params)
-    @celebrity.booking = @booking
+    @celebrity.user_id = 1
+    # @celebrity.booking = @booking
     if @celebrity.save
-      redirect_to booking_path(@booking)
+      redirect_to celebrity_path(@celebrity)
     end
   end
 
@@ -29,7 +30,7 @@ class CelebritiesController < ApplicationController
     @celebrity = Celebrity.find(params[:id])
   end
 
-  def celebrities_params
-    params.require(:celebrity).permit(:name, :prince_per_hour, :location)
+  def celebrity_params
+    params.require(:celebrity).permit(:name, :price_per_hour, :location)
   end
 end
