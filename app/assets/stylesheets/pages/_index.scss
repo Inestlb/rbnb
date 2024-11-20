@@ -1,3 +1,42 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.btn-only-stars-blue {
+  background-color: $only-stars-blue;
+  color: #fff; // Une couleur de texte contrastante
+  border: none;
+  border-radius: 50px;
+  width: 120px;
+  font-style: "Yeseva One", serif;
+}
+
+.form-control {
+  border-radius: 25px;
+}
+
+.icons {
+  list-style-type: none; /* Supprime les puces des listes */
+  padding: 0;
+  margin: 0;
+}
+
+.icons li {
+  display: flex;
+  flex-direction: column; /* Empile l'image et le texte */
+  align-items: center;    /* Centre l'image et le texte horizontalement */
+  justify-content: center; /* Centre verticalement si nécessaire */
+  text-align: center;
+}
+
+.icons img {
+  margin: 0 auto; /* Assure un centrage horizontal */
+  display: block; /* Supprime tout espace résiduel autour de l'image */
+  width: 50px; /* Réduit la largeur de l'image */
+  height: auto; /* Maintient les proportions de l'image */
+}
+
+.row {
+  display: flex;
+  justify-content: center; /* Centre tous les colonnes horizontalement */
+  align-items: center;     /* Aligne les colonnes verticalement */
+}
