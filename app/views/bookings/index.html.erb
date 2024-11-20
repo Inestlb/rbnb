@@ -1,19 +1,26 @@
-<h2 class="text-center my-5">Mes Réservations</h2>
+
+<h2 class="text-center my-5">Demandes de réservation de <%=@celebrity.name %> </h2>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @bookings.each do |booking| %>
-    <div class="col">
-      <div class="card h-100">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="card-img-top" alt="Image de réservation">
-        <div class="card-body">
-          <h5 class="card-title">Prix total : <%= number_to_currency(booking.total_price, unit: "€") %></h5>
-          <p class="card-text"><strong>Activité:</strong> <%= booking.activity %></p>
-          <p class="card-text"><strong>Utilisateur:</strong> <%= booking.user_id %></p>
-          <p class="card-text"><strong>Réservations:</strong> <%= booking.status %></p>
-          <%= link_to "Accepter", celebrity_accept_path(id: booking.id), data: { turbo_method: "PATCH" } %>
-          <%= link_to "Annuler", celebrity_refuse_path(id: booking.id), method: :patch %>
+  <% if @bookings.any? %>
+    <% @bookings.each do |booking| %>
+      <div class="col">
+        <div class="card h-100">
+          <img src="<%= booking.celebrity.images %> " class="card-img-top" alt="Image de réservation">
+          <div class="card-body">
+            <h5 class="card-title">Prix total : <%= number_to_currency(booking.total_price, unit: "€") %></h5>
+            <p class="card-text"><strong>Activité:</strong> <%= booking.activity %></p>
+            <p class="card-text"><strong>Utilisateur:</strong> <%= booking.user_id %></p>
+            <p class="card-text"><strong>Réservations:</strong> <%= booking.status %></p>
+            <%= link_to "Accepter", celebrity_accept_path(id: booking.id), data: { turbo_method: "PATCH" } %>
+            <%= link_to "Annuler", celebrity_refuse_path(id: booking.id), data: { turbo_method: "PATCH" }  %>
+          </div>
         </div>
       </div>
+    <% end %>
+  <% else %>
+    <div class="col-12 text-center">
+      <p>Aucune réservation trouvée pour cette célébrité.</p>
     </div>
   <% end %>
 </div>
