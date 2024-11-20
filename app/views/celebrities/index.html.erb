@@ -1,6 +1,6 @@
 <div class= "main-background">
 
-  <div class="container text-center border-black">
+  <div class="search-bar text-center">
 
     <div class="text-center">
 
@@ -14,11 +14,9 @@
     </div>
 
   </div>
-<div class="container icon-categories">
+<div id="icons" class="container icon-categories">
   <div class="row text-center g-3">
-
-    <!-- Influencers -->
-    <div class="col-auto">
+    <div class="col-2">
       <ul class="list icons d-flex justify-content-center">
         <li>
           <img
@@ -30,21 +28,19 @@
       </ul>
     </div>
 
-    <!-- Champions -->
-    <div class="col-auto">
+    <div class="col-2">
       <ul class="list icons d-flex justify-content-center">
         <li>
           <img
             src="https://em-content.zobj.net/source/apple/391/man-lifting-weights-medium-light-skin-tone_1f3cb-1f3fc-200d-2642-fe0f.png"
             alt="Sport emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Athletess</p>
+          <p class="text-center mt-2 fw-bold">Athletes</p>
         </li>
       </ul>
     </div>
 
-    <!-- Actors -->
-    <div class="col-auto">
+    <div class="col-2">
       <ul class="list icons d-flex justify-content-center">
         <li>
           <img
@@ -56,8 +52,7 @@
       </ul>
     </div>
 
-    <!-- Singers -->
-    <div class="col-auto">
+    <div class="col-2">
       <ul class="list icons d-flex justify-content-center">
         <li>
           <img
@@ -69,8 +64,7 @@
       </ul>
     </div>
 
-    <!-- Politicians -->
-    <div class="col-auto">
+    <div class="col-2">
       <ul class="list icons d-flex justify-content-center">
         <li>
           <img
@@ -82,8 +76,7 @@
       </ul>
     </div>
 
-    <!-- Comedians -->
-    <div class="col-auto">
+    <div class="col-2">
       <ul class="list icons d-flex justify-content-center">
         <li>
           <img
@@ -98,10 +91,7 @@
   </div>
 </div>
 
-
-
-
-  <div id="allcards" class="container mt-4">
+  <div id="allcards" class="container mt-2">
 
     <div class="row justify-content-center gy-4">
 
@@ -109,21 +99,21 @@
 
         <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
 
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 30rem;">
 
-            <img src="..." class="card-img-top" alt="...">
+            <img src="<%= celebrity.images %>" class="card-img-top" alt="Celebrity Image">
             <div class="card-body">
-               <h5 class="card-title"><%= celebrity.name %></h5>
+               <h5 class="card-title text-center fw-bold"><%= celebrity.name %></h5>
             </div>
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><%= celebrity.price_per_hour %></li>
-              <li class="list-group-item"><%= celebrity.location %></li>
+              <li class="list-group-item"> <i class="fa-solid fa-tag"></i> <%= celebrity.price_per_hour %>$ per hour</li>
+              <li class="list-group-item"> <i class="fa-solid fa-location-dot"></i> <%= celebrity.location %></li>
             </ul>
 
-            <div class="card-body">
-              <%= link_to "Voir plus", celebrity_path(celebrity) %>
-              <%= link_to "Réserver", new_celebrity_booking_path(celebrity) %>
+            <div class="card-body text-center">
+             <div id="see-more" class="btn btn-only-stars-blue"> <%= link_to "See more", celebrity_path(celebrity), class:"text-white text-decoration-none"%> </div>
+             <div id="book-me" class="btn btn-only-stars-blue"> <%= link_to "Book me", new_celebrity_booking_path(celebrity), class:"text-white text-decoration-none"%> </div>
             </div>
 
           </div>
