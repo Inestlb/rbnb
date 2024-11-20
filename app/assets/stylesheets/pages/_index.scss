@@ -16,8 +16,8 @@
 
 .icons {
   list-style-type: none; /* Supprime les puces des listes */
-  padding: 0;
-  margin: 0;
+  padding: 15px;
+  margin-top: 15px;
 }
 
 .icons li {
@@ -31,12 +31,63 @@
 .icons img {
   margin: 0 auto; /* Assure un centrage horizontal */
   display: block; /* Supprime tout espace résiduel autour de l'image */
-  width: 50px; /* Réduit la largeur de l'image */
+  width: 35px; /* Réduit la largeur de l'image */
   height: auto; /* Maintient les proportions de l'image */
+}
+
+.icons:hover {
+  background-color: #1230AE;
+  border-radius: 30px;
+  font-size: larger;
+  color: white;
+}
+
+.icons img {
+  transition: transform 0.3s ease;
+}
+
+.icons:hover img {
+  transform: scale(1.2);
 }
 
 .row {
   display: flex;
-  justify-content: center; /* Centre tous les colonnes horizontalement */
-  align-items: center;     /* Aligne les colonnes verticalement */
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  border-bottom: 1px solid rgb(214, 210, 210);
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 5px 2px 2px rgb(214, 210, 210);
+}
+
+#see-more{
+  color: white;
+  background-color: #1230AE;
+}
+
+#book-me{
+  color: white;
+  background-color: #1230AE
+}
+
+#see-more:hover{
+  background-color: #C68FE6;
+  transition: transform 0.3s ease;
+}
+
+#book-me:hover{
+  background-color: #C68FE6;
+  transition: transform 0.3s ease;
+}
+
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0;
 }

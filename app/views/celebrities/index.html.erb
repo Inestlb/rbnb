@@ -101,14 +101,14 @@
 
           <div class="card" style="width: 30rem;">
 
-            <img src="..." class="card-img-top" alt="...">
+            <img src="<%= celebrity.images %>" class="card-img-top" alt="Celebrity Image">
             <div class="card-body">
                <h5 class="card-title text-center fw-bold"><%= celebrity.name %></h5>
             </div>
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><%= celebrity.price_per_hour %></li>
-              <li class="list-group-item"><%= celebrity.location %></li>
+              <li class="list-group-item"> <i class="fa-solid fa-tag"></i> <%= celebrity.price_per_hour %>$ per hour</li>
+              <li class="list-group-item"> <i class="fa-solid fa-location-dot"></i> <%= celebrity.location %></li>
             </ul>
 
             <div class="card-body text-center">
