@@ -14,7 +14,7 @@
          <%= f.input :name, as: :string, label: "Enter your name" %>
         </div>
         <!-- Price per hour -->
-        <div class="row mb-3>
+        <div class="mb-3>
           <div class="col-6 text-end">
             <%= f.input :price_per_hour, input_html: { type: 'number' } %>
           </div>
@@ -22,6 +22,8 @@
         <div class="mb-3">
          <%= f.input :location, as: :string, label: "Location" %>
         </div>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
 
           <!-- Date end -->
           <%# <div class="col-6 text-start">
