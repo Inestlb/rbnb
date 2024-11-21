@@ -1,14 +1,17 @@
-// Specific CSS for your home-page
-.icons {
-  display: flex;       /* Active le mode Flexbox */
-  gap: 15px;           /* Espacement entre les icônes */
-  list-style: none;    /* Supprime les puces des <li> */
-  padding: 0;          /* Supprime le padding interne de la liste */
-  margin: 0;           /* Supprime les marges externes de la liste */
+.centered-diamond {
+  position: absolute;
+  top: 50%;  /* Positionner verticalement au centre */
+  left: 50%; /* Positionner horizontalement au centre */
+  transform: translate(-50%, -50%); /* Ajuster l'image pour qu'elle soit parfaitement centrée */
+  animation: rotate 2s infinite linear;  /* Animation de rotation continue */
+  width: 800px;  /* Taille plus grande de l'image */
 }
 
-.website-background {
-  background-color: #f5f1f1;
-  width: 100%;
-  height: 100vh;
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);  /* Angle de rotation de départ */
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);  /* Rotation complète */
+  }
 }

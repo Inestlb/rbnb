@@ -5,6 +5,9 @@ class CelebritiesController < ApplicationController
 
   def index
     @celebrities = Celebrity.all
+    if params[:query].present?
+      @celebrities = Celebrity.search_by(params[:query])
+    end
   end
 
   def new
