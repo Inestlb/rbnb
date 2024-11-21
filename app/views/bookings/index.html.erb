@@ -1,28 +1,61 @@
-
-<h2 class="text-center my-5">Demandes de réservation de <%=@celebrity.name %> </h2>
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <% if @bookings.any? %>
-    <% @bookings.each do |booking| %>
-      <div class="col">
-        <div class="card h-100">
-          <img src="<%= booking.celebrity.images %> " class="card-img-top" alt="Image de réservation">
-          <div class="card-body">
-            <h5 class="card-title">Prix total : <%= number_to_currency(booking.total_price, unit: "€") %></h5>
-            <p class="card-text"><strong>Activité:</strong> <%= booking.activity %></p>
-            <p class="card-text"><strong>Utilisateur:</strong> <%= booking.user_id %></p>
-            <p class="card-text"><strong>Réservations:</strong> <%= booking.status %></p>
-            <%= link_to "Accepter", celebrity_accept_path(id: booking.id), data: { turbo_method: "PATCH" } %>
-            <%= link_to "Annuler", celebrity_refuse_path(id: booking.id), data: { turbo_method: "PATCH" }  %>
-          </div>
-        </div>
+<div class="container my-5">
+  <div style="border-radius: 16px; overflow: hidden;">
+    <h2 class="text-center my-4">Demandes de réservation de <%= @celebrity.name %></h2>
+      <div class="table-responsive">
+        <% if @bookings.any? %>
+      <table class="table table-bordered table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>Photo</th>
+            <th>Nom</th>
+            <th>Activité</th>
+            <th>Utilisateur</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |booking| %>
+          <tr>
+            <!-- Photo -->
+              <td>
+                <img src="<%= booking.celebrity.images %>"
+                   alt="Image de réservation"
+                   class="rounded"
+                   style="width: 64px; height: 64px; object-fit: cover;">
+                </td>
+            <!-- Nom -->
+              <td><%= booking.celebrity.name %></td>
+            <!-- Activité -->
+              <td><%= booking.activity %></td>
+            <!-- Utilisateur -->
+              <td><%= booking.user_id %></td>
+            <!-- Statut -->
+              <td>
+                <span class="badge
+                  <%= booking.status == 'pending' ? 'bg-warning text-dark' :
+                      booking.status == 'accepted' ? 'bg-success' : 'bg-danger' %>">
+                  <%= booking.status.capitalize %>
+                </span>
+              </td>
+            <!-- Action -->
+              <td>
+                <%= link_to "Accepter", celebrity_accept_path(id: booking.id),
+                           class: "btn btn-success btn-sm",
+                           data: { turbo_method: "PATCH" } %>
+                <%= link_to "Refuser", celebrity_refuse_path(id: booking.id),
+                           class: "btn btn-danger btn-sm",
+                           data: { turbo_method: "PATCH" } %>
+                </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="text-center">
+        <p>Aucune réservation trouvée pour cette célébrité.</p>
       </div>
     <% end %>
-  <% else %>
-    <div class="col-12 text-center">
-      <p>Aucune réservation trouvée pour cette célébrité.</p>
-    </div>
-  <% end %>
+  </div>
 </div>
-
-
+</div>
