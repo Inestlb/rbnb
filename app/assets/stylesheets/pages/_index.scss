@@ -70,20 +70,21 @@
   background-color: #1230AE;
 }
 
-#book-me{
-  color: white;
-  background-color: #1230AE
-}
-
 #see-more:hover{
   background-color: #C68FE6;
   transition: transform 0.3s ease;
+}
+
+#book-me{
+  color: white;
+  background-color: #1230AE
 }
 
 #book-me:hover{
   background-color: #C68FE6;
   transition: transform 0.3s ease;
 }
+
 
 .card-img-top {
   height: 200px;
