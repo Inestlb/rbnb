@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema[7.1].define(version: 2024_11_21_100008) do
+=======
 ActiveRecord::Schema[7.1].define(version: 2024_11_21_105548) do
+>>>>>>> 263e85c13049448d9d2289257c084c32cff394ca
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +71,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_21_105548) do
     t.string "word"
     t.string "images"
     t.index ["user_id"], name: "index_celebrities_on_user_id"
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
 
   create_table "users", force: :cascade do |t|

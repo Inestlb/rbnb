@@ -14,10 +14,14 @@
   border-radius: 25px;
 }
 
+.search-bar {
+  margin-bottom: 8px; /* Ajoute une marge en bas de la barre de recherche */
+}
+
 .icons {
   list-style-type: none; /* Supprime les puces des listes */
-  padding: 15px;
-  margin-top: 15px;
+  padding: 5px;
+  margin-top: px;
 }
 
 .icons li {
@@ -26,6 +30,7 @@
   align-items: center;    /* Centre l'image et le texte horizontalement */
   justify-content: center; /* Centre verticalement si nécessaire */
   text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Ajoute une transition pour les transformations */
 }
 
 .icons img {
@@ -33,23 +38,20 @@
   display: block; /* Supprime tout espace résiduel autour de l'image */
   width: 35px; /* Réduit la largeur de l'image */
   height: auto; /* Maintient les proportions de l'image */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Ajoute une transition pour les effets sur l'image */
 }
 
 .icons:hover {
-  background-color: #1230AE;
+  background-color: #5679D8; /* Couleur plus claire */
   border-radius: 30px;
-  font-size: larger;
   color: white;
-}
-
-.icons img {
-  transition: transform 0.3s ease;
+  transform: scale(1.05); /* Ajoute un léger effet de zoom */
 }
 
 .icons:hover img {
-  transform: scale(1.2);
+  transform: scale(1.2); /* Agrandit légèrement l'image */
+  filter: brightness(1.2); /* Augmente légèrement la luminosité */
 }
-
 .row {
   display: flex;
   justify-content: center;

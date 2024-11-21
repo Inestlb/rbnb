@@ -1,0 +1,5 @@
+<div class="btn-wrapper" data-controller="home">
+  <%= link_to celebrities_path, id: "see-more", data: { home_target: "see-more", action: "click->home#click" } do %>
+    <%= image_tag 'diamonds-removebg-preview.png', alt: 'Diamond', class: 'centered-diamond', id: 'diamond-image' %>
+  <% end %>
+</div>
