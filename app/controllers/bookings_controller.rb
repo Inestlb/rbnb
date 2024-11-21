@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_celebrity, only: [:index]
 
   def index
-    @bookings = Booking.all
+    @bookings = @celebrity&.bookings || []
   end
 
   def new
@@ -21,7 +22,8 @@ class BookingsController < ApplicationController
     price_vs_time
 
     if @booking.save
-      redirect_to celebrity_path(@celebrity), notice: "Réservation réussie !"
+      flash[:notice] = "Votre demande de réservation a été prise en compte."
+      redirect_to dashboard_path
     else
       flash.now[:alert] = "Erreur lors de la réservation. Veuillez réessayer."
       render :new
@@ -36,6 +38,8 @@ class BookingsController < ApplicationController
   end
 
   def refuse
+    @celebrity = Celebrity.find(params[:celebrity_id])
+    @booking = Booking.find(params[:id])
     @booking.refused!
   end
 
@@ -65,4 +69,7 @@ class BookingsController < ApplicationController
     end
   end
 
+  def set_celebrity
+    @celebrity = current_user.celebrities.find_by(id: params[:celebrity_id])
+  end
 end

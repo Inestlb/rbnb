@@ -7,7 +7,13 @@
         <!-- Select an activity -->
         <div class="mb-3">
           <%= f.label :activity, "Select an activity", class: "form-label" %>
-          <%= f.collection_select :activity, [["Activity 1", "Course à cheval au coucher de soleil"], ["Activity 2", "Apparition dans un anniversaire"], ["Activity 3", "Mcdo ensemble"], ["Activity 4", "Rendre visite à ma mamie"], ["Activity 5", "M'apprendre AJAX dans rails"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
+          <%= f.collection_select :activity, [["Course à cheval au coucher de soleil", "Course à cheval au coucher de soleil"],
+          ["Apparition dans un anniversaire", "Apparition dans un anniversaire"],
+          ["Mcdo ensemble", "Mcdo ensemble"],
+          ["Rendre visite à ma mamie", "Rendre visite à ma mamie"],
+          ["M'apprendre AJAX dans rails", "M'apprendre AJAX dans rails"],
+          ["Débat philosophique avec mon chat", "Débat philosophique avec mon chat"],
+          ["Atelier: construction d'un château de sable", "Atelier: construction d'un château de sable"]], :first, :last, { prompt: "Select an activity" }, { class: "form-control" } %>
         </div>
 
         <!-- Price per hour -->

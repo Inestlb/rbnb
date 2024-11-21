@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root to: "celebrities#index"
   resources :users, only: [:new, :create, :show]
+  get "dashboard", to: "pages#dashboard", as: :dashboard
   resources :celebrities, except: [:destroy] do
     resources :bookings, only: [:index, :new, :create, :update]
     patch "bookings/:id/accept", to: "bookings#accept", as: :accept
