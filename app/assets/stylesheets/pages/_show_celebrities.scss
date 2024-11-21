@@ -1,0 +1,17 @@
+.image-card-show img {
+  width: 100%; /* Prend toute la largeur disponible */
+  height: auto; /* Garde les proportions correctes */
+  border-radius: 15px; /* S'aligne sur le style de la carte */
+  object-fit: cover; /* Ajuste l'image sans distorsion */
+  max-height: 400px; /* Limite la hauteur pour éviter les tailles excessives */
+}
+
+.btn .show-btn {
+  color: white !important;
+  background-color: #1230AE !important;
+}
+
+.btn .show-btn:hover {
+  background-color: #C68FE6 !important;
+  transition: transform 0.3s ease;
+}

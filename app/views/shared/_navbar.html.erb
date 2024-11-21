@@ -3,43 +3,43 @@
 
   <div class="logo-and-name d-flex text-start">
     <a class="navbar-brand" href="#">
-      <i class="fa-regular fa-gem fa-2x" style="color: #C68fe6;"></i>
+      <i class="fa-regular fa-gem fa-2x" style="color: #fefbfc;"></i>
 </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-company-name">
-    <%= link_to "OnlyStars", celebrities_path, class: "fw-bold fs-2 logo-font", style: "color: #C68fe6; text-decoration: none" %></div>
+    <%= link_to "OnlyStars", celebrities_path, class: "fw-bold fs-2 logo-font", style: "color: #fefbfc; text-decoration: none" %></div>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
      <%# <button type="button" class="btn btn-light">Post my star</button> %>
-     <%= link_to new_celebrity_path, class: "btn btn-light" do %>
+     <%= link_to new_celebrity_path, class: "btn btn-outline-light fw-bold content-font rounded-button me-3" do %>
       Post my star
       <% end %>
       <ul class="navbar-nav me-auto">
-          <%= link_to celebrities_path, style: "color: #C68fe6;", class:"nav-link fw-bold mt-1" do %>
+          <%= link_to celebrities_path, style: "color: #fefbfc;", class:"nav-link fw-bold mt-1 me-2" do %>
           <li class="nav-item active">
           <i class="fa-solid fa-house" id="home-icon"></i>
           </li>
           <% end %>
-            <%= link_to celebrities_path, style: "color: #C68fe6;", class:"nav-link fw-bold mt-1" do %>
-          <li class="nav-item me-3">
-            <i class="fa-light fa-comment"></i>
+            <%= link_to celebrities_path, style: "color: #fefbfc;", class:"nav-link fw-bold mt-1 me-3" do %>
+          <li class="nav-item active">
+            <i class="fa-solid fa-message"></i>
           </li>
             <% end %>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://static.public.fr/wp-content/uploads/2024/03/Exclu-Public-Beverly-L-ile-des-verites-3-Je-suis-accro-a-la-tele-realite--1536x1141.webp"/>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%# <%= link_to "Mes réservations", celibrity_path(celebrity.id), class: "dropdown-item" %>
-              <a class="dropdown-item" href="#">Mes réservations</a>
-              <a class="dropdown-item" href="#">Mes Fav's</a>
+              <a class="dropdown-item" href="/dashboard">Mes réservations</a>
+              <a class="dropdown-item" href="#">Mes fav's</a>
               <a class="dropdown-item" href="#">Mon compte</a>
               <a class="dropdown-item" data-turbo-method="delete" href="#">Déconnexion</a>
             </div>
           </li>
 
-       
+
       </ul>
     </div>
   </div>
