@@ -1,0 +1,8 @@
+.index-img {
+  width: 100%; /* S'adapte à la largeur de la carte */
+  height: 250px; /* Ajuste la hauteur selon vos préférences */
+  object-fit: cover; /* Assure que l'image garde ses proportions tout en remplissant l'espace */
+  border-radius: 8px; /* Ajoute des bords arrondis (optionnel) */
+  display: block; /* Évite tout comportement indésirable avec l'alignement */
+  margin: 0 auto; /* Centre l'image horizontalement */
+}
