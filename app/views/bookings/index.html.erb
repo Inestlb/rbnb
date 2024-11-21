@@ -1,6 +1,6 @@
 <div class="container my-5">
   <div style="border-radius: 16px; overflow: hidden;">
-    <h2 class="text-center my-4">Demandes de réservation de <%= @celebrity.name %></h2>
+    <h2 class="text-center my-4">Demandes de réservation</h2>
       <div class="table-responsive">
         <% if @bookings.any? %>
       <table class="table table-bordered table-hover">
@@ -39,7 +39,7 @@
                 </span>
               </td>
             <!-- Action -->
-              <td>
+              <td data-controller="action">
                 <%= link_to "Accepter", celebrity_accept_path(id: booking.id),
                            class: "btn btn-success btn-sm",
                            data: { turbo_method: "PATCH" } %>

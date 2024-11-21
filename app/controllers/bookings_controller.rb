@@ -35,12 +35,14 @@ class BookingsController < ApplicationController
     @celebrity = Celebrity.find(params[:celebrity_id])
     @booking = Booking.find(params[:id])
     @booking.accepted!
+    respond_to do |format| format.html { redirect_to request.referrer || root_path, notice: 'Booking accepted!' } end
   end
 
   def refuse
     @celebrity = Celebrity.find(params[:celebrity_id])
     @booking = Booking.find(params[:id])
     @booking.refused!
+    respond_to do |format| format.html { redirect_to request.referrer || root_path, notice: 'Booking refuse!' } end
   end
 
   def update
