@@ -3,13 +3,45 @@
   height: 50px; /* Taille ajustable selon vos besoins */
   border-radius: 50%; /* Rend l'image circulaire */
   object-fit: cover; /* Pour ajuster le contenu dans le cercle */
-  border: 2px solid #C68fe6; /* Optionnel, ajoute une bordure */
+  border: 2px solid #fefbfc; /* Optionnel, ajoute une bordure */
 }
 
+.dropdown-item {
+  background-color: #fefbfc ;
+  color: #1230AE;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family:"Roboto Serif" ;
+}
 .dropdown-item:hover {
   background-color: #C68fe6;
-  color: #fff;
+  color: #fefbfc;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.rounded-button {
+  border-radius: 25px;
+  background-color:#fefbfc ; /* Couleur de fond au survol */
+  color:#1230AE;
+  font-family: "Roboto Serif"; /* Couleur du texte au survol *//* Arrondi des coins */
+}
 
+.rounded-button:hover {
+  background-color: #C68FE6; /* Couleur de fond au survol */
+  color: white;
+}
+
+// .circular-button {
+//   background-color: #007BFF;
+//   color: #fefbfc;
+//   border: none;
+//   width: 50px; /* Largeur égale à la hauteur */
+//   height: 50px; /* Hauteur égale à la largeur */
+//   border-radius: 50%; /* Rond parfait */
+//   font-size: 20px; /* Taille du texte */
+//   text-align: center;
+//   line-height: 50px; /* Centre verticalement le texte */
+//   cursor: pointer;
+// }
+
+// .circular-button:hover {
+//   background-color: #0056b3; /* Couleur au survol */
