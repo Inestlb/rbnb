@@ -31,6 +31,6 @@ class CelebritiesController < ApplicationController
   end
 
   def celebrity_params
-    params.require(:celebrity).permit(:name, :price_per_hour, :location)
+    params.require(:celebrity).permit(:name, :price_per_hour, :location, photos: [])
   end
 end
