@@ -10,9 +10,9 @@
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Describe your dream activity with your favorite star..."
+            placeholder: "Décris moi ton activité de rêve avec ta star préférée..."
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-only-stars-blue" %>
+      <%= submit_tag "Search", name: "", class: "btn btn-only-stars-blue content-font" %>
     <% end %>
   </div>
 </div>
@@ -28,7 +28,7 @@
             src="https://em-content.zobj.net/source/apple/391/selfie_medium-skin-tone_1f933-1f3fd_1f3fd.png"
             alt="Influence emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Influencers</p>
+          <p class="text-center mt-2 fw-bold content-font">Influencers</p>
         </li>
       </ul>
     </div>
@@ -40,7 +40,7 @@
             src="https://em-content.zobj.net/source/apple/391/man-lifting-weights-medium-light-skin-tone_1f3cb-1f3fc-200d-2642-fe0f.png"
             alt="Sport emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Athletes</p>
+          <p class="text-center mt-2 fw-bold content-font">Athlètes</p>
         </li>
       </ul>
     </div>
@@ -52,7 +52,7 @@
             src="https://em-content.zobj.net/source/apple/391/clapper-board_1f3ac.png"
             alt="Actor emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Actors</p>
+          <p class="text-center mt-2 fw-bold content-font">Acteurs</p>
         </li>
       </ul>
     </div>
@@ -64,7 +64,7 @@
             src="https://em-content.zobj.net/source/apple/391/microphone_1f3a4.png"
             alt="Chanteur emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Singers</p>
+          <p class="text-center mt-2 fw-bold content-font">Chanteurs</p>
         </li>
       </ul>
     </div>
@@ -76,7 +76,7 @@
             src="https://em-content.zobj.net/source/apple/391/classical-building_1f3db-fe0f.png"
             alt="Politique emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Politicians</p>
+          <p class="text-center mt-2 fw-bold content-font">Politiciens</p>
         </li>
       </ul>
     </div>
@@ -88,7 +88,7 @@
             src="https://em-content.zobj.net/source/apple/391/performing-arts_1f3ad.png"
             alt="Humour emoji"
             class="category-icon">
-          <p class="text-center mt-2 fw-bold">Comedians</p>
+          <p class="text-center mt-2 fw-bold content-font">Comédiens</p>
         </li>
       </ul>
     </div>
@@ -107,17 +107,17 @@
           <div class="card" style="width: 30rem;">
             <%= cl_image_tag celebrity.photos.first.key, class: "index-img", width: 700, height: 400, crop: :fit %>
             <div class="card-body">
-               <h5 class="card-title text-center fw-bold"><%= celebrity.name %></h5>
+               <h5 class="card-title text-center fw-bold content-font"><%= celebrity.name %></h5>
             </div>
 
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"> <i class="fa-solid fa-tag"></i> <%= celebrity.price_per_hour %>$ per hour</li>
-              <li class="list-group-item"> <i class="fa-solid fa-location-dot"></i> <%= celebrity.location %></li>
+              <li class="list-group-item content-font"> <i class="fa-solid fa-tag"></i> <%= celebrity.price_per_hour %>€ par heure</li>
+              <li class="list-group-item content-font"> <i class="fa-solid fa-location-dot"></i> <%= celebrity.location %></li>
             </ul>
 
             <div class="card-body text-center">
-             <div id="see-more" class="btn btn-only-stars-blue"> <%= link_to "See more", celebrity_path(celebrity), class:"text-white text-decoration-none"%> </div>
-             <div id="book-me" class="btn btn-only-stars-blue"> <%= link_to "Book me", new_celebrity_booking_path(celebrity), class:"text-white text-decoration-none"%> </div>
+             <div id="see-more" class="btn btn-only-stars-blue content-font"> <%= link_to "Voir plus", celebrity_path(celebrity), class:"text-white text-decoration-none"%> </div>
+             <div id="book-me" class="btn btn-only-stars-blue content-font"> <%= link_to "Réserver", new_celebrity_booking_path(celebrity), class:"text-white text-decoration-none"%> </div>
             </div>
 
           </div>

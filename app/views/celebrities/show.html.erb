@@ -1,7 +1,7 @@
 <div class="container my-5 d-flex justify-content-center">
   <div class="card shadow-sm" style="border-radius: 15px; max-width: 900px; width: 100%;">
     <div class="card-body p-5">
-      <%# <h2 class="card-title text-center mb-4"><%= @celebrity.name %></h2>
+      <%# <h2 class="card-title text-center mb-4"><%= @celebrity.name </h2>
       <%# <% @celebrity.photos.each do |photo| %>
         <%# <%= cl_image_tag photo.key %>
       <%# <% end %>
@@ -24,13 +24,17 @@
     </button>
   </div>
 
-      <p class="card-text"><strong>Rating:</strong> <%= @celebrity.rating %> / 5</p>
+    <div class="text-show content-font">
+      <p class="card-text mt-4"><strong>Rating:</strong> <%= @celebrity.rating %> / 5</p>
       <p class="card-text"><strong>Un mot de ta star:</strong> <%= @celebrity.word%></p>
       <p class="card-text"><strong>Prix à l'heure:</strong> <%= @celebrity.price_per_hour %> €</p>
       <p class="card-text"><strong>Localisation:</strong> <%= @celebrity.location %></p>
       <div class="d-flex justify-content-center mt-4">
-        <%= link_to "Réserver", new_celebrity_booking_path(@celebrity), class: "btn btn-primary me-2" %>
-        <%= link_to "Retour", celebrities_path, class: "btn btn-secondary" %>
+    </div>
+    <div class="btn-show text-center">
+        <%= link_to "Réserver", new_celebrity_booking_path(@celebrity), class: "btn btn-only-stars-blue content-font me-2" %>
+        <%= link_to "Retour", celebrities_path, class: "btn btn-only-stars-blue content-font" %>
+    </div>
       </div>
     </div>
   </div>
