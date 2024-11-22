@@ -4,7 +4,7 @@ class CelebritiesController < ApplicationController
   end
 
   def index
-    @celebrities = Celebrity.all
+    @celebrities = Celebrity.where.not(user: current_user)
     if params[:query].present?
       @celebrities = Celebrity.search_by(params[:query])
     end

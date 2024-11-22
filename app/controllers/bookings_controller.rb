@@ -32,15 +32,19 @@ class BookingsController < ApplicationController
 
 
   def accept
-    @celebrity = Celebrity.find(params[:celebrity_id])
+    # @celebrity = Celebrity.find(params[:celebrity_id])
     @booking = Booking.find(params[:id])
     @booking.accepted!
+
+    redirect_to my_bookings_path
   end
 
   def refuse
-    @celebrity = Celebrity.find(params[:celebrity_id])
+    # @celebrity = Celebrity.find(params[:celebrity_id])
     @booking = Booking.find(params[:id])
     @booking.refused!
+    redirect_to my_bookings_path
+
   end
 
   def update
@@ -52,6 +56,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def my_bookings
+    @celebrities = current_user.contracted_celebrities
+    @ids = @celebrities.pluck(:id)
+    @bookings = Booking.where(celebrity_id: @ids)
+  end
 
 
   private

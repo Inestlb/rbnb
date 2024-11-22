@@ -17,7 +17,6 @@
       <thead class="table-light">
         <tr class="fs-5 content-font">
           <th>#</th>
-          <th>Photo</th>
           <th>Célébrité</th>
           <th>Date</th>
           <th>Activité</th>
@@ -29,10 +28,7 @@
         <% @bookings.each do |booking| %>
           <tr class="fs-6">
             <td><%= booking.id %></td>
-            <td>
-              <img src="<%= booking.celebrity.images %>" class="rounded-circle"
-                   style="width: 64px; height: 64px; object-fit: cover;" alt="Avatar">
-            </td>
+
             <td><%= booking.celebrity.name %></td>
             <td><%= booking.date_start %> - <%= booking.date_end %></td>
             <td><%= booking.activity %></td>

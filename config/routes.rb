@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   get "dashboard", to: "pages#dashboard", as: :dashboard
   resources :celebrities, except: [:destroy] do
-    resources :bookings, only: [:index, :new, :create, :update]
-    patch "bookings/:id/accept", to: "bookings#accept", as: :accept
-    patch "bookings/:id/refuse", to: "bookings#refuse", as: :refuse
+    resources :bookings, only: %i[new create]
   end
+  resources :bookings, only: [:index, :update]
+  get "my_bookings", to: "bookings#my_bookings", as: :my_bookings
+  patch "bookings/:id/accept", to: "bookings#accept", as: :accept
+  patch "bookings/:id/refuse", to: "bookings#refuse", as: :refuse
 
 
 
