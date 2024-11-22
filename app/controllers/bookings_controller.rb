@@ -70,6 +70,6 @@ class BookingsController < ApplicationController
   end
 
   def set_celebrity
-    @celebrity = current_user.celebrities.find_by(id: params[:celebrity_id])
+    @celebrity = current_user.contracted_celebrities.find_by(id: params[:celebrity_id])
   end
 end
