@@ -1,8 +1,10 @@
 <%= simple_form_for([@celebrity, @booking]) do |f| %>
-  <div class="container my-5 d-flex justify-content-center">
+  <div class="container my-5 d-flex justify-content-center" data-controller="datepicker">
     <div class="card shadow-sm" style="border-radius: 15px; max-width: 800px; width: 100%;">
       <div class="card-body p-5">
-        <h2 class="card-title text-center mb-4">Réservation <strong><%= @celebrity.name %></strong></h2>
+        <h2 class="card-title text-center mb-4">
+          Réservation <strong><%= @celebrity.name %></strong>
+        </h2>
 
         <!-- Select an activity -->
         <div class="mb-3">
@@ -28,12 +30,12 @@
 
         <!-- Date start -->
         <div class="mb-3">
-          <%= f.input :date_start, as: :string, label: "Date de début", input_html: { class: "form-control", data: { controller: "datepicker" } } %>
+          <%= f.input :date_start, as: :string, label: "Date de début", input_html: { class: "form-control", data: { datepicker_target: "start" } } %>
         </div>
 
         <!-- Date end -->
         <div class="mb-3">
-          <%= f.input :date_end, as: :string, label: "Date de fin", input_html: { class: "form-control", data: { controller: "datepicker" } } %>
+          <%= f.input :date_end, as: :string, label: "Date de fin", input_html: { class: "form-control", data: { datepicker_target: "end", action: "change->datepicker#trigger" } } %>
         </div>
 
         <!-- Total price -->
@@ -42,7 +44,9 @@
             <%= f.label :total_price, "Prix total", class: "form-label mb-0" %>
           </div>
           <div class="col-6 text-start">
-            <p class="form-control-plaintext mb-0"><%= @booking.total_price || "—" %> €</p>
+            <p class="form-control-plaintext mb-0"
+               data-price="<%= @celebrity.price_per_hour %>"
+               data-datepicker-target="price">€</p>
           </div>
         </div>
 
