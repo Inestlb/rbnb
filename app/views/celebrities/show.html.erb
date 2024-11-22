@@ -41,16 +41,12 @@
   <div class="d-flex align-items-center">
     <i class="fas fa-map-marker-alt text-danger me-2"></i>
     <p class="mb-0"><strong>Localisation:</strong> <%= @celebrity.location %></p>
-     <div class="btn-show text-center">
+    </div>
+     <div class="btn-show text-center mt-5">
         <%= link_to "Réserver", new_celebrity_booking_path(@celebrity), class: "btn btn-only-stars-blue content-font me-2" %>
         <%= link_to "Retour", celebrities_path, class: "btn btn-only-stars-blue content-font" %>
     </div>
      </div>
     </div>
   </div>
-</div>
-
-<div class="d-flex justify-content-center mt-4">
-  <%= link_to "Réserver", new_celebrity_booking_path(@celebrity), class: "btn btn-primary me-3 px-4" %>
-  <%= link_to "Retour", celebrities_path, class: "btn btn-secondary px-4" %>
 </div>
