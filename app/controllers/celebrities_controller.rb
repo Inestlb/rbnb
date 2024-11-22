@@ -16,7 +16,7 @@ class CelebritiesController < ApplicationController
 
   def create
     @celebrity = Celebrity.new(celebrity_params)
-    @celebrity.user_id = 1
+    @celebrity.user = current_user
     # @celebrity.booking = @booking
     if @celebrity.save
       redirect_to celebrity_path(@celebrity)

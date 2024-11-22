@@ -6,23 +6,22 @@
                 url('<%= asset_path("banner_fond.png") %>');
                 background-size: cover;
                 background-position: center;
-                color: #6C48C5;
+                color: black;
                 padding: 20px;
                 font-size: Nunito, Helvetica, sans-serif;">
-      <h2 class="text-center my-5">Demandes de réservations</h2>
-      <h5 class="text-center my-5">Rdv avec les stars</h5>
+      <h2 class="text-center my-5 content-font fw-bold">Demandes de réservations</h2>
     </div>
 
     <!-- Table -->
     <table class="table table-bordered table-hover mb-0">
       <thead class="table-light">
-        <tr class="fs-5">
+        <tr class="fs-5 content-font">
           <th>#</th>
           <th>Photo</th>
           <th>Célébrité</th>
           <th>Date</th>
           <th>Activité</th>
-          <th>Status</th>
+          <th>Statut</th>
           <th>Total</th>
         </tr>
       </thead>
@@ -48,7 +47,7 @@
                 <%= booking.status.capitalize %>
               </span>
             </td>
-            <td><%= number_to_currency(booking.total_price, unit: "$") %></td>
+            <td><%= number_to_currency(booking.total_price, unit: "€") %></td>
           </tr>
         <% end %>
       </tbody>

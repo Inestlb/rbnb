@@ -2,7 +2,7 @@
   <div class="container my-5 d-flex justify-content-center">
     <div class="card shadow-sm" style="border-radius: 15px; max-width: 800px; width: 100%;">
       <div class="card-body p-5">
-        <h2 class="card-title text-center mb-4">Réservation <strong><%= @celebrity.name %></strong></h2>
+        <h2 class="card-title text-center mb-4 content-font fw-bold">Ajouter une célébrité <strong><%= @celebrity.name %></strong></h2>
 
         <!-- Select an activity -->
         <%# <div class="mb-3">
@@ -11,16 +11,16 @@
         <%# </div> %>
 
         <div class="mb-3">
-         <%= f.input :name, as: :string, label: "Enter your name" %>
+         <%= f.input :name, as: :string, label: "Nom de la célébrité" %>
         </div>
         <!-- Price per hour -->
         <div class="mb-3>
           <div class="col-6 text-end">
-            <%= f.input :price_per_hour, input_html: { type: 'number' } %>
+            <%= f.input :price_per_hour, label: "Prix par heure", input_html: { type: 'number' } %>
           </div>
 
         <div class="mb-3">
-         <%= f.input :location, as: :string, label: "Location" %>
+         <%= f.input :location, as: :string, label: "Localisation" %>
         </div>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
@@ -40,8 +40,8 @@
 
         <!-- Submit button -->
         <div class="d-flex justify-content-center mt-4">
-          <%= f.submit "Créer une célébrité vraiment svp", class: "btn btn-primary me-2" %>
-          <%= link_to "Retour", celebrities_path, class: "btn btn-secondary" %>
+          <%= f.submit "Valider", class: "btn btn-only-stars-blue content-font me-2" %>
+          <%= link_to "Retour", celebrities_path, class: "btn btn-only-stars-blue content-font ms-2" %>
         </div>
       </div>
     </div>
