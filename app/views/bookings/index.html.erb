@@ -9,8 +9,8 @@
             <th>Photo</th>
             <th>Nom</th>
             <th>Activité</th>
-            <th>Utilisateur</th>
-            <th>Status</th>
+            <th>Utilisateur<th>
+            <th>Statut</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -40,10 +40,10 @@
               </td>
             <!-- Action -->
               <td>
-                <%= link_to "Accepter", celebrity_accept_path(id: booking.id),
+                <%= link_to "accepted", celebrity_accept_path(id: booking.id),
                            class: "btn btn-success btn-sm",
                            data: { turbo_method: "PATCH" } %>
-                <%= link_to "Refuser", celebrity_refuse_path(id: booking.id),
+                <%= link_to "refused", celebrity_refuse_path(id: booking.id),
                            class: "btn btn-danger btn-sm",
                            data: { turbo_method: "PATCH" } %>
                 </td>
