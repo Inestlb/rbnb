@@ -10,7 +10,7 @@
     <div class="carousel-inner">
     <% @celebrity.photos.each_with_index do |photo, index| %>
       <div class="carousel-item <%= 'active' if index == 0 %>">
-        <%= cl_image_tag photo.key, class: "d-block mx-auto", width: 700, height: 400, crop: :fit %>
+        <%= cl_image_tag photo.key, class: "show-img d-block mx-auto", crop: "thumb", gravity: "face" %>
       </div>
     <% end %>
     </div>

@@ -1,8 +1,20 @@
 .index-img {
-  width: 100%; /* S'adapte à la largeur de la carte */
-  height: 250px; /* Ajuste la hauteur selon vos préférences */
-  object-fit: cover; /* Assure que l'image garde ses proportions tout en remplissant l'espace */
-  border-radius: 8px; /* Ajoute des bords arrondis (optionnel) */
-  display: block; /* Évite tout comportement indésirable avec l'alignement */
+  width: 100%; /* L'image occupe toute la largeur du conteneur */
+  height: 250px; /* Limite la hauteur pour éviter l'étirement vertical */
+  // max-height: 400px; /* Limite la hauteur pour éviter l'étirement vertical */
+  object-fit: cover; /* Préserve les proportions tout en remplissant l'espace */
+  border-radius: 8px; /* Optionnel : bords arrondis */
+  display: block; /* S'assure que l'image est un bloc */
   margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+
+.show-img {
+  width: 100%; /* L'image occupe toute la largeur du conteneur */
+  // height: 250px; /* Limite la hauteur pour éviter l'étirement vertical */
+  max-height: 400px; /* Limite la hauteur pour éviter l'étirement vertical */
+  object-fit: cover; /* Préserve les proportions tout en remplissant l'espace */
+  border-radius: 8px; /* Optionnel : bords arrondis */
+  display: block; /* S'assure que l'image est un bloc */
+  margin: 0 auto;
 }

@@ -79,7 +79,7 @@ end
 
 ian_somerhalder = Celebrity.find_by(name: "Ian somerhalder")
 if ian_somerhalder
-  file1 = URI.parse("http://images2.fanpop.com/image/photos/10000000/-Ian-ian-somerhalder-10005003-1763-2181.jpg").open
+  file1 = URI.parse("http://images4.fanpop.com/image/photos/16300000/Ian-Somerhalder-2010-Scream-Awards-HD-the-vampire-diaries-actors-16365428-2560-1971.jpg").open
   ian_somerhalder.photos.attach(io: file1, filename: "photo1-Ian.jpg", content_type: "image/jpg")
   file2 = URI.parse("https://images8.alphacoders.com/368/368322.jpg").open
   ian_somerhalder.photos.attach(io: file2, filename: "photo2-Ian.jpg", content_type: "image/jpg")
@@ -92,7 +92,7 @@ end
 
 george_clooney = Celebrity.find_by(name: "George Clooney")
 if george_clooney
-  file1 = URI.parse("http://frontrowfeatures.com/wp-content/uploads/2015/05/0513clooney02_hi.jpg").open
+  file1 = URI.parse("https://content.fortune.com/wp-content/uploads/2018/08/george-clooney-net-worth-tequila.jpg").open
   george_clooney.photos.attach(io: file1, filename: "photo1-george.jpg", content_type: "image/jpg")
   file2 = URI.parse("https://www.aceshowbiz.com/images/wennpic/george-clooney-85th-annual-oscars-press-room-01.jpg").open
   george_clooney.photos.attach(io: file2, filename: "photo2-george.jpg", content_type: "image/jpg")
@@ -104,7 +104,7 @@ end
 
 paris_hilton = Celebrity.find_by(name: "Paris Hilton")
 if paris_hilton
-  file1 = URI.parse("https://assets.teenvogue.com/photos/595683aaca687356bf6dc18a/master/pass/GettyImages-184464381_master.jpg").open
+  file1 = URI.parse("https://www.sheknows.com/wp-content/uploads/2022/12/paris-hilton.jpg").open
   paris_hilton.photos.attach(io: file1, filename: "photo1-paris.jpg", content_type: "image/jpg")
   file2 = URI.parse("http://top-10-list.org/wp-content/uploads/2009/09/Paris-Hilton1.jpg").open
   paris_hilton.photos.attach(io: file2, filename: "photo2-paris.jpg", content_type: "image/jpg")
@@ -152,7 +152,7 @@ end
 
 timotee_chalamet = Celebrity.find_by(name: "Timothée Chalamet")
 if timotee_chalamet
-  file1 = URI.parse("https://es.web.img3.acsta.net/pictures/18/01/23/15/36/0550263.jpg").open
+  file1 = URI.parse("https://static.highsnobiety.com/thumbor/nTFhZOM1rcEY9B-ZcCTXwPIupGE=/1600x1067/static.highsnobiety.com/wp-content/uploads/2019/09/03111210/timothee-chalamet-venice-main.jpg").open
   timotee_chalamet.photos.attach(io: file1, filename: "photo1-timotee_chalamet.jpg", content_type: "image/jpg")
   file2 = URI.parse("https://www.theplace2.ru/cache/archive/timothee_chalamet/img/hoems4id_o_1-gthumb-gwdata1200-ghdata1200-gfitdatamax.jpg").open
   timotee_chalamet.photos.attach(io: file2, filename: "photo2-timothee_chalamet.jpg", content_type: "image/jpg")
@@ -197,7 +197,7 @@ end
 
 celine_dion = Celebrity.find_by(name: "Céline Dion")
 if celine_dion
-  file1 = URI.parse("https://celebmafia.com/wp-content/uploads/2017/02/celine-dion-on-red-carpet-grammy-awards-in-los-angeles-2-12-2017-6.jpg").open
+  file1 = URI.parse("https://www.grazia.fr/wp-content/uploads/grazia/2022/11/shutterstock_1684932607-1-scaled.jpg").open
   celine_dion.photos.attach(io: file1, filename: "photo1-celine_dion.jpg", content_type: "image/jpg")
   file2 = URI.parse("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/people/style/trajectoire-mode/celine-dion-transformation/78904379-1-fre-FR/celine-dion-transformation.jpg").open
   celine_dion.photos.attach(io: file2, filename: "photo2-celine_dion.jpg", content_type: "image/jpg")
