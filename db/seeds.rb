@@ -94,7 +94,7 @@ george_clooney = Celebrity.find_by(name: "George Clooney")
 if george_clooney
   file1 = URI.parse("https://content.fortune.com/wp-content/uploads/2018/08/george-clooney-net-worth-tequila.jpg").open
   george_clooney.photos.attach(io: file1, filename: "photo1-george.jpg", content_type: "image/jpg")
-  file2 = URI.parse("https://www.aceshowbiz.com/images/wennpic/george-clooney-85th-annual-oscars-press-room-01.jpg").open
+  file2 = URI.parse("http://images6.fanpop.com/image/photos/35200000/George-Clooney-george-clooney-35253992-1680-1050.jpg").open
   george_clooney.photos.attach(io: file2, filename: "photo2-george.jpg", content_type: "image/jpg")
   puts "photo attached to george"
 else
@@ -143,7 +143,7 @@ emma_watson = Celebrity.find_by(name: "Emma Watson")
 if emma_watson
   file1 = URI.parse("https://wallpapercave.com/wp/wc1733479.jpg").open
   emma_watson.photos.attach(io: file1, filename: "photo1-emma_watson.jpg", content_type: "image/jpg")
-  file2 = URI.parse("https://i.pinimg.com/originals/06/18/6d/06186d95ebe5c21c2f2fd954d12e8693.jpg").open
+  file2 = URI.parse("http://images4.fanpop.com/image/photos/18800000/Emma-Watson-emma-watson-18878962-1920-1200.jpg").open
   emma_watson.photos.attach(io: file2, filename: "photo2-emma_watson.jpg", content_type: "image/jpg")
   puts "photo attached to Emma Watson"
 else
@@ -154,7 +154,7 @@ timotee_chalamet = Celebrity.find_by(name: "Timothée Chalamet")
 if timotee_chalamet
   file1 = URI.parse("https://static.highsnobiety.com/thumbor/nTFhZOM1rcEY9B-ZcCTXwPIupGE=/1600x1067/static.highsnobiety.com/wp-content/uploads/2019/09/03111210/timothee-chalamet-venice-main.jpg").open
   timotee_chalamet.photos.attach(io: file1, filename: "photo1-timotee_chalamet.jpg", content_type: "image/jpg")
-  file2 = URI.parse("https://www.theplace2.ru/cache/archive/timothee_chalamet/img/hoems4id_o_1-gthumb-gwdata1200-ghdata1200-gfitdatamax.jpg").open
+  file2 = URI.parse("https://biografieonline.it/img/bio/gallery/t/Timothee_Chalamet_3.jpg").open
   timotee_chalamet.photos.attach(io: file2, filename: "photo2-timothee_chalamet.jpg", content_type: "image/jpg")
   puts "photo attached to Thimothée Chalamet"
 else
@@ -199,7 +199,7 @@ celine_dion = Celebrity.find_by(name: "Céline Dion")
 if celine_dion
   file1 = URI.parse("https://www.grazia.fr/wp-content/uploads/grazia/2022/11/shutterstock_1684932607-1-scaled.jpg").open
   celine_dion.photos.attach(io: file1, filename: "photo1-celine_dion.jpg", content_type: "image/jpg")
-  file2 = URI.parse("https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/people/style/trajectoire-mode/celine-dion-transformation/78904379-1-fre-FR/celine-dion-transformation.jpg").open
+  file2 = URI.parse("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1hNILc.img?w=1920&h=1080&m=4&q=96").open
   celine_dion.photos.attach(io: file2, filename: "photo2-celine_dion.jpg", content_type: "image/jpg")
   puts "photo attached to Céline Dion"
 else
