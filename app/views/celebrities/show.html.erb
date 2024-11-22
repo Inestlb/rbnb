@@ -43,7 +43,9 @@
     <p class="mb-0"><strong>Localisation:</strong> <%= @celebrity.location %></p>
     </div>
      <div class="btn-show text-center mt-5">
+     <% unless current_user.id == @celebrity.user_id %>
         <%= link_to "Réserver", new_celebrity_booking_path(@celebrity), class: "btn btn-only-stars-blue content-font me-2" %>
+      <% end %>
         <%= link_to "Retour", celebrities_path, class: "btn btn-only-stars-blue content-font" %>
     </div>
      </div>
