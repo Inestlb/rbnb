@@ -14,14 +14,14 @@
 
 
 # puts "seeding finished"
-
+Booking.destroy_all
 Celebrity.destroy_all
 User.destroy_all
 
 puts "Starting seed deployment"
 users_email = ["test1@test.fr", "test2@test.net", "test3@test.com", "test4@test.fr", "test5@test.net", "test6@test.com", "test7@test.fr", "test8@test.net", "test9@test.com", "test10@test.fr", "test11@test.net", "test12@test.net"]
-@celebrities_name = ["George Clooney", "Paris Hilton", "Squeezie", "Ian somerhalder", "Lady Gaga", "Emma Watson", "Timothée Chalamet", "Daddy yankee", "Fary", "Léon Marchand", "Céline Dion", "Marine Le Pen"]
-@celebrities_location = ["Hollywood", "New York", "Lyon", "Paris", "Beverly Hills", "Grigny la grande Borne", "Villegenon", "Evry-sur-Seine", "Paris", "Toulouse", "Montréal", "Neuilly-sur-Seine" ]
+@celebrities_name = ["George Clooney", "Paris Hilton", "Squeezie", "Ian somerhalder", "Lady Gaga", "Emma Watson", "Timothée Chalamet", "Daddy yankee", "Fary", "Léon Marchand", "Céline Dion", "Marine Le Pen (indisponible - en procès)"]
+@celebrities_location = ["Hollywood", "New York", "Lyon", "Paris", "Beverly Hills", "Grigny la grande Borne", "Villegenon", "Evry-sur-Seine", "Paris", "Toulouse", "Montréal", "Fleury-Mérogis" ]
 # @celebrities_images = ["https://cdn.britannica.com/33/196233-050-169795DF/George-Clooney-2016.jpg", "https://static.foxnews.com/foxnews.com/content/uploads/2024/09/paris-hilton.jpg",
 # "https://cdn.unitycms.io/images/A7G8p8VRKa-Abuh9nzCziK.jpg?op=ocroped&val=1200,630,1000,1000,0,0&sum=ddLUVgX4MY8", "https://photos.tf1.fr/940/531/ian-somerhalder-12-7178be-0@3x.webp",
 # "https://www.francetvinfo.fr/pictures/xtwrDAeRv6kHkqUNeaAww54yxAQ/1200x1200/2024/09/27/ladygagagetty-66f679a73447b481577297.jpg",
@@ -54,7 +54,7 @@ users_email = ["test1@test.fr", "test2@test.net", "test3@test.com", "test4@test.
   "Champion sous l'eau comme sur la terre, je peux vous donner des cours de natation, ou simplement discuter techniques sportives.
   J'apporte mes lunettes de nage, au cas où.",
   "Icône absolue, prête à chanter My Heart Will Go On dans
-  n'importe quel contexte (même au karaoké d'un fast-food). Si vous aimez l'excentricité, vous serez servi.", "Pas d'arguments"
+  n'importe quel contexte (même au karaoké d'un fast-food). Si vous aimez l'excentricité, vous serez servi.", "Indisponible"
 ]
 @index = 0
 
@@ -206,7 +206,7 @@ else
   puts "celeb Céline Dion not found"
 end
 
-marine_le_pen = Celebrity.find_by(name: "Marine Le Pen")
+marine_le_pen = Celebrity.find_by(name: "Marine Le Pen (indisponible - en procès)")
 if marine_le_pen
   file1 = URI.parse("https://laregledujeu.org/files/2013/10/marine-le-pen-extreme-droite.jpg").open
   marine_le_pen.photos.attach(io: file1, filename: "photo1-marine_le_pen.jpg", content_type: "image/jpg")

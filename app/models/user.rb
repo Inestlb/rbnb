@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :celebrities, through: :bookings
+  has_many :contracted_celebrities, class_name: 'Celebrity'
 end
